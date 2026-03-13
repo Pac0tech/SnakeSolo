@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Snake Solo</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main class="page">
+    <section class="card snake-shell">
+      <div class="snake-header">
+        <div>
+          <h1>Snake</h1>
+          <p class="snake-help">Use arrow keys or WASD. Pause with the button or space.</p>
+        </div>
+        <div class="snake-meta">
+          <div class="snake-meta-block">
+            <span>Score</span>
+            <strong id="snakeScore">0</strong>
+          </div>
+          <div class="snake-meta-block">
+            <span>State</span>
+            <strong id="snakeState">Ready</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="snake-layout">
+        <div>
+          <div id="snakeStatus" class="snake-status" aria-live="polite">Ready to start.</div>
+          <div id="snakeBoard" class="snake-board" aria-label="Snake game board"></div>
+        </div>
+
+        <aside class="snake-sidebar">
+          <div class="snake-actions">
+            <button id="snakeStartButton" type="button">Start</button>
+            <button id="snakePauseButton" type="button">Pause</button>
+            <button id="snakeRestartButton" type="button">Restart</button>
+          </div>
+
+          <div class="snake-controls" aria-label="Snake controls">
+            <button type="button" data-direction="up">Up</button>
+            <div class="snake-controls-row">
+              <button type="button" data-direction="left">Left</button>
+              <button type="button" data-direction="right">Right</button>
+            </div>
+            <button type="button" data-direction="down">Down</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./snake-game.mjs"></script>
+</body>
+</html>
