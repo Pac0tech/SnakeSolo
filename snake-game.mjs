@@ -284,7 +284,12 @@ export function mountSnakeGame(options = {}) {
   const startButton = documentRef.getElementById("snakeStartButton");
   const pauseButton = documentRef.getElementById("snakePauseButton");
   const restartButton = documentRef.getElementById("snakeRestartButton");
-  const controlButtons = Array.from(documentRef.querySelectorAll(".snake-controls button[data-direction]"));
+  const controlButtons = [
+    documentRef.getElementById("snakeControlUp"),
+    documentRef.getElementById("snakeControlLeft"),
+    documentRef.getElementById("snakeControlRight"),
+    documentRef.getElementById("snakeControlDown"),
+  ].filter(Boolean);
 
   if (!board || !status || !score || !stateLabel || !startButton || !pauseButton || !restartButton) {
     return null;
@@ -467,3 +472,4 @@ if (typeof window !== "undefined") {
 
   mountSnakeGame();
 }
+
